@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Pet</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    img {
+      width: 200px;
+      transition: transform 0.3s;
+    }
+    .happy {
+      transform: scale(1.1);
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Meet Your Pet!</h1>
+  <img id="pet" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/VAN_CAT.png/480px-VAN_CAT.png" alt="Cute Pet">
+  <p id="message">Hi! I'm your virtual pet!</p>
+
+  <button onclick="petMe()">Pet Me!</button>
+  <button onclick="feedMe()">Feed Me!</button>
+
+  <script>
+    function petMe() {
+      const pet = document.getElementById('pet');
+      const msg = document.getElementById('message');
+
+      pet.classList.add('happy');
+      msg.innerText = "Yay! Thank you! 🥰";
+
+      setTimeout(() => {
+        pet.classList.remove('happy');
+        msg.innerText = "Hi! I'm your virtual pet!";
+      }, 1500);
+    }
+
+    function feedMe() {
+      const pet = document.getElementById('pet');
+      const msg = document.getElementById('message');
+
+      pet.src = "https://media.tenor.com/whmiFP2zGQQAAAAi/cat-meme-cat-eat.gif";
+      msg.innerText = "Yum yum! 🍖";
+
+      setTimeout(() => {
+        pet.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/VAN_CAT.png/480px-VAN_CAT.png";
+        msg.innerText = "Hi! I'm your virtual pet!";
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
